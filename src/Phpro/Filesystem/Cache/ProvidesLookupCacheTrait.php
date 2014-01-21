@@ -33,10 +33,11 @@ trait ProvidesLookupCacheTrait
      */
     public function getLookupCache($key)
     {
-        if (!$this->hasLookupCache($key)) {
+        $normalized = $this->normalizeLookupKey($key);
+        if (!$this->hasLookupCache($normalized)) {
             return null;
         }
-        return $this->lookupCache[$key];
+        return $this->lookupCache[$normalized];
     }
 
     /**
