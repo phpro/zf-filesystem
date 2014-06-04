@@ -100,7 +100,9 @@ class IptcService implements
 
         // Load image info:
         $infoService = $this->getImageInfoService();
-        $imageInfo = $infoService->getImageInfo($file);
+        $imageInfo = $infoService->getExtendedImageInfo($file);
+
+        // Validate:
         if (!isset($imageInfo[self::IPTC_NAMESPACE]) || empty($imageInfo[self::IPTC_NAMESPACE])) {
             throw new IOException(sprintf('No IPTC data available for file: %s', $location));
         }

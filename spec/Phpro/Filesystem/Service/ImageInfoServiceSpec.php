@@ -27,11 +27,13 @@ class ImageInfoServiceSpec extends ObjectBehavior
     }
 
     /**
+     * @param \Symfony\Component\Filesystem\Filesystem $filesystem
      * @param \Phpro\Filesystem\File\FileInterface $file
      */
-    public function it_should_remember_image_info_in_lookup($file)
+    public function it_should_remember_image_info_in_lookup($filesystem, $file)
     {
         $file->getPath()->willReturn('file');
+        $filesystem->exists('file')->willReturn(true);
         $this->setLookupCache('file', []);
         $this->getImageInfo($file)->shouldReturn([]);
     }
@@ -62,6 +64,19 @@ class ImageInfoServiceSpec extends ObjectBehavior
         $filesystem->exists('file')->willReturn(true);
 
         $this->getImageInfo($file)->shouldReturn([]);
+    }
+
+    /**
+     * @param \Symfony\Component\Filesystem\Filesystem $filesystem
+     * @param \Phpro\Filesystem\File\FileInterface $file
+     */
+    public function it_should_load_extendend_image_info_form_file($filesystem, $file)
+    {
+        // TODO: add file to check info...
+        return;
+
+        $file->getPath()->willReturn('file');
+        $filesystem->exists('file')->willReturn(true);
     }
 
 }

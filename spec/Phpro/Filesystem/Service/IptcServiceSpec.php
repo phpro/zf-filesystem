@@ -82,7 +82,7 @@ class IptcServiceSpec extends ObjectBehavior
     public function it_should_throw_exception_when_no_image_data_could_be_found($imageInfoService, $file)
     {
         $file->getPath()->willReturn('file');
-        $imageInfoService->getImageInfo($file)->willReturn([]);
+        $imageInfoService->getExtendedImageInfo($file)->willReturn([]);
 
         $this->shouldThrow('Symfony\Component\Filesystem\Exception\IOException')->duringGetRawIptcData($file);
     }
@@ -97,7 +97,7 @@ class IptcServiceSpec extends ObjectBehavior
         return;
 
         $file->getPath()->willReturn('file');
-        $imageInfoService->getImageInfo($file)->willReturn(array('APP13' => 'binaryIptcData'));
+        $imageInfoService->getExtendedImageInfo($file)->willReturn(array('APP13' => 'binaryIptcData'));
         $this->getRawIptcData($file)->shouldReturn('x');
     }
 

@@ -32,7 +32,7 @@ class IptcHydrator extends ClassMethods
             'special_instructions' => 40,
             'reference_date' => 50,
             'created_date' => 55,
-            'originating_program' => 64,
+            'originating_program' => 65,
             'program_version' => 70,
             'object_cycly' => 75,
             'byline' => 80,
