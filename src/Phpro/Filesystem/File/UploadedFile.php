@@ -1,6 +1,7 @@
 <?php
 
 namespace Phpro\Filesystem\File;
+use Phpro\Filesystem\File\Feature\Moveable;
 use Zend\Stdlib\ArraySerializableInterface;
 use Zend\Stdlib\Hydrator;
 
@@ -13,6 +14,7 @@ use Zend\Stdlib\Hydrator;
 class UploadedFile
     implements
     ArraySerializableInterface,
+    Moveable,
     FileInterface
 {
 
@@ -168,6 +170,14 @@ class UploadedFile
             'error' => $this->getError(),
             'size' => $this->getSize(),
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function move($targetPath)
+    {
+        $this->tmpName = $targetPath;
     }
 
 }

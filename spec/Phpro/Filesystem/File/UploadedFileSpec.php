@@ -29,6 +29,11 @@ class UploadedFileSpec extends ObjectBehavior
         $this->shouldImplement('Zend\Stdlib\ArraySerializableInterface');
     }
 
+    public function it_is_moveable()
+    {
+        $this->shouldImplement('Phpro\Filesystem\File\Feature\Moveable');
+    }
+
     public function it_should_have_a_name()
     {
         $value = 'name';
@@ -87,6 +92,13 @@ class UploadedFileSpec extends ObjectBehavior
         $data['type']->shouldBe('image/jpg');
         $data['error']->shouldBe(null);
         $data['size']->shouldBe(132);
+    }
+
+    public function it_should_move_the_file()
+    {
+        $file = 'target.html';
+        $this->move($file);
+        $this->getPath()->shouldBe($file);
     }
 
 }

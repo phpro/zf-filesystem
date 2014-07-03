@@ -1,13 +1,15 @@
 <?php
 
 namespace Phpro\Filesystem\File;
+use Phpro\Filesystem\File\Feature\Moveable;
 
 /**
  * Class LocalFile
  *
  * @package Phpro\Filesystem\File
  */
-class LocalFile implements FileInterface
+class LocalFile
+    implements FileInterface, Moveable
 {
 
     /**
@@ -30,6 +32,16 @@ class LocalFile implements FileInterface
      * @throws \RuntimeException
      */
     public function __construct($file)
+    {
+        $this->loadFile($file);
+    }
+
+    /**
+     * @param $file
+     *
+     * @throws \RuntimeException
+     */
+    protected function loadFile($file)
     {
         if (!file_exists($file)) {
             throw new \RuntimeException(sprintf('Invalid file: %s', $file));
@@ -75,6 +87,14 @@ class LocalFile implements FileInterface
     public function getPath()
     {
         return $this->file;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function move($targetPath)
+    {
+        $this->loadFile($targetPath);
     }
 
 }
