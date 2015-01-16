@@ -14,4 +14,11 @@ return array(
         ],
     ],
 
+    'phpro_filesystem' => [
+        'exiftool' => [
+            'executable' => '/usr/bin/exiftool',
+            'allowed_tags' => require_once(__DIR__ . '/exiftool-tags.php'),
+        ],
+    ],
+
 );

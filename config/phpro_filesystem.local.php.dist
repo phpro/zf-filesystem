@@ -1,0 +1,12 @@
+<?php
+
+return [
+
+    'phpro_filesystem' => [
+        'exiftool' => [
+            // Configure where the application can find the exiftool executable.
+            'executable' => '/usr/bin/exiftool',
+        ],
+    ],
+
+];

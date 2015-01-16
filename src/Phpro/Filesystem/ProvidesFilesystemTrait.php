@@ -2,9 +2,13 @@
 
 namespace Phpro\Filesystem;
 
-
 use Symfony\Component\Filesystem\Filesystem;
 
+/**
+ * Class ProvidesFilesystemTrait
+ *
+ * @package Phpro\Filesystem
+ */
 trait ProvidesFilesystemTrait
 {
 
