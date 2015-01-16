@@ -4,16 +4,20 @@ return array(
     'service_manager' => [
         'invokables' => [
             'Symfony\Component\Filesystem\Filesystem' => 'Symfony\Component\Filesystem\Filesystem',
-
-            'Phpro\Filesystem\Service\ExifService' => 'Phpro\Filesystem\Service\ExifService',
-            'Phpro\Filesystem\Service\ImageInfoService' => 'Phpro\Filesystem\Service\ImageInfoService',
-            'Phpro\Filesystem\Service\Md5Service' => 'Phpro\Filesystem\Service\Md5Service',
         ],
         'factories' => [
-            'Phpro\Filesystem\Service\IptcService' => 'Phpro\Filesystem\Service\IptcService',
+            'Phpro\Filesystem\Metadata\Image\ExifTool' => 'Phpro\Filesystem\Factory\MetadataExifToolFactory',
+            'Phpro\Filesystem\Metadata\Image\Identify' => 'Phpro\Filesystem\Factory\MetadataIdentifyFactory',
+            'Phpro\Filesystem\Metadata\Image\ImageInfo' => 'Phpro\Filesystem\Factory\MetadataImageInfoFactory',
+            'Phpro\Filesystem\Metadata\Md5' => 'Phpro\Filesystem\Factory\MetadataMd5Factory',
+            'Phpro\Filesystem\Options\ExifToolOptions' => 'Phpro\Filesystem\Factory\ExifToolOptionsFactory',
+            'Phpro\Filesystem\Process\ExifTool' => 'Phpro\Filesystem\Factory\ExifToolProccessFactory',
         ],
         'initializers' => [
             'Phpro\Filesystem\Initializer\Filesystem' => 'Phpro\Filesystem\Initializer\Filesystem',
+        ],
+        'aliases' => [
+            'Filesystem' => 'Symfony\Component\Filesystem\Filesystem',
         ],
     ],
 

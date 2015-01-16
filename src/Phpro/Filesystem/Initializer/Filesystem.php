@@ -29,7 +29,7 @@ class Filesystem
             return;
         }
 
-        $fileSystem = $serviceLocator->get('Symfony\Component\Filesystem\Filesystem');
+        $fileSystem = $serviceLocator->get('Filesystem');
         $instance->setFilesystem($fileSystem);
     }
 

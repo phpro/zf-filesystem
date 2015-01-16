@@ -50,7 +50,7 @@ class ExifTool
      */
     protected function guardIsValidTag($tag)
     {
-        if (!in_array($tag, $this->options->getAllowedTags())) {
+        if (!in_array(strtolower($tag), $this->options->getAllowedTags())) {
             throw new \RuntimeException('Invalid tag: ', $tag);
         }
     }
