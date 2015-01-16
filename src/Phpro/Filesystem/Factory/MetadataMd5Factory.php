@@ -13,14 +13,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class MetadataMd5Factory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $filesystem = $serviceLocator->get('Filesystem');
+
         return new Md5($filesystem);
     }
-
-} 
+}

@@ -11,13 +11,11 @@ use Phpro\Filesystem\File\FileInterface;
  */
 interface MetadataInterface
 {
-
     /**
      * @param FileInterface $file
-     * @param array $options
+     * @param array         $options
      *
      * @return mixed
      */
     public function getMetadataForFile(FileInterface $file, array $options = []);
-
 }

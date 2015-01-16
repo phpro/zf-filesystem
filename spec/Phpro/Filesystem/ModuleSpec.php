@@ -3,7 +3,6 @@
 namespace spec\Phpro\Filesystem;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ModuleSpec extends ObjectBehavior
 {
@@ -31,5 +30,4 @@ class ModuleSpec extends ObjectBehavior
     {
         $this->getAutoloaderConfig()->shouldBeArray();
     }
-
 }

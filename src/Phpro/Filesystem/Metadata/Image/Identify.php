@@ -13,7 +13,6 @@ use Phpro\Filesystem\Metadata\AbstractMetadata;
  */
 final class Identify extends AbstractMetadata
 {
-
     /**
      * @var Imagick
      */
@@ -36,6 +35,7 @@ final class Identify extends AbstractMetadata
     public function getMetadataForFile(FileInterface $file, array $options = [])
     {
         $this->guardFileExists($file);
+
         return $this->parseIdentify($file, $options);
     }
 
@@ -76,5 +76,4 @@ final class Identify extends AbstractMetadata
 
         return count($spotColors) ? true : false;
     }
-
 }

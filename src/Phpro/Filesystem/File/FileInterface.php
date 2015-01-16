@@ -9,7 +9,6 @@ namespace Phpro\Filesystem\File;
  */
 interface FileInterface
 {
-
     /**
      * @return string
      */

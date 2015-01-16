@@ -12,7 +12,6 @@ use Phpro\Filesystem\Metadata\AbstractMetadata;
  */
 final class ImageInfo extends AbstractMetadata
 {
-
     /**
      * @param $fileSystem
      */
@@ -37,5 +36,4 @@ final class ImageInfo extends AbstractMetadata
 
         return $imageInfo;
     }
-
 }

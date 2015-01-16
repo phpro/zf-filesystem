@@ -1,6 +1,7 @@
 <?php
 
 namespace Phpro\Filesystem\File;
+
 use Phpro\Filesystem\File\Feature\Moveable;
 use Zend\Stdlib\ArraySerializableInterface;
 use Zend\Stdlib\Hydrator;
@@ -17,7 +18,6 @@ class UploadedFile
     Moveable,
     FileInterface
 {
-
     /**
      * @var string
      */
@@ -144,7 +144,7 @@ class UploadedFile
     /**
      * Exchange internal values from provided array
      *
-     * @param  array $array
+     * @param array $array
      *
      * @return void
      */
@@ -179,5 +179,4 @@ class UploadedFile
     {
         $this->tmpName = $targetPath;
     }
-
 }

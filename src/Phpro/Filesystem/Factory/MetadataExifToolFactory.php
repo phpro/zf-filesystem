@@ -13,7 +13,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class MetadataExifToolFactory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
@@ -24,5 +23,4 @@ class MetadataExifToolFactory implements FactoryInterface
 
         return new ExifTool($filesystem, $exifToolProcess);
     }
-
-} 
+}

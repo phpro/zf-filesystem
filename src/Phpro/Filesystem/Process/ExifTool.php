@@ -13,7 +13,6 @@ use Symfony\Component\Process\ProcessBuilder;
  */
 class ExifTool
 {
-
     /**
      * @var string
      */
@@ -40,7 +39,7 @@ class ExifTool
     protected function guardIsExecutable($executable)
     {
         if (!file_exists($executable) || !is_executable($executable)) {
-            throw new \RuntimeException('Configured exiftool location is not executable: ' . $executable);
+            throw new \RuntimeException('Configured exiftool location is not executable: '.$executable);
         }
     }
 
@@ -64,6 +63,7 @@ class ExifTool
 
         $processBuilder = new ProcessBuilder();
         $processBuilder->setPrefix($this->executable);
+
         return $processBuilder;
     }
 
@@ -72,11 +72,11 @@ class ExifTool
      *
      * @return array
      */
-    protected  function runProcess(Process $process)
+    protected function runProcess(Process $process)
     {
         $process->run();
         if (!$process->isSuccessful()) {
-            throw new \RuntimeException('Could not load the exiftool data: ' . $process->getErrorOutput());
+            throw new \RuntimeException('Could not load the exiftool data: '.$process->getErrorOutput());
         }
 
         return json_decode($process->getOutput(), true);
@@ -84,7 +84,7 @@ class ExifTool
 
     /**
      * @param FileInterface $file
-     * @param string $tag
+     * @param string        $tag
      *
      * @return mixed
      */
@@ -98,7 +98,7 @@ class ExifTool
         // Set tag if it is configured
         if ($tag) {
             $this->guardIsValidTag($tag);
-            $processBuilder->add('-' . strtolower($tag) . ':all');
+            $processBuilder->add('-'.strtolower($tag).':all');
         }
 
         // Add the file
@@ -106,7 +106,7 @@ class ExifTool
 
         // Run process:
         $process = $processBuilder->getProcess();
+
         return $this->runProcess($process);
     }
-
 }

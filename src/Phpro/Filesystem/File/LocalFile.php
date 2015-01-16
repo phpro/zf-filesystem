@@ -1,6 +1,7 @@
 <?php
 
 namespace Phpro\Filesystem\File;
+
 use Phpro\Filesystem\File\Feature\Moveable;
 
 /**
@@ -11,7 +12,6 @@ use Phpro\Filesystem\File\Feature\Moveable;
 class LocalFile
     implements FileInterface, Moveable
 {
-
     /**
      * @var string
      */
@@ -66,6 +66,7 @@ class LocalFile
         if (!$this->size) {
             $this->size = filesize($this->file);
         }
+
         return $this->size;
     }
 
@@ -78,6 +79,7 @@ class LocalFile
             $finfo = new \finfo(FILEINFO_MIME);
             $this->mime = $finfo->file($this->file);
         }
+
         return $this->mime;
     }
 
@@ -96,5 +98,4 @@ class LocalFile
     {
         $this->loadFile($targetPath);
     }
-
 }

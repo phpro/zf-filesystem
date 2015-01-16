@@ -18,7 +18,7 @@ class Module implements
      */
     public function getConfig()
     {
-        return include __DIR__ . '/../../../config/module.config.php';
+        return include __DIR__.'/../../../config/module.config.php';
     }
 
     /**

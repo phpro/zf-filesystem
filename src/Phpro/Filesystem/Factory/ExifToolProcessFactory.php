@@ -13,14 +13,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class ExifToolProcessFactory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $options = $serviceLocator->get('Phpro\Filesystem\Options\ExifToolOptions');
+
         return new ExifTool($options);
     }
-
-} 
+}

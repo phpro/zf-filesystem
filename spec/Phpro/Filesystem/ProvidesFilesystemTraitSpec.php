@@ -2,7 +2,6 @@
 
 namespace spec\Phpro\Filesystem;
 
-
 trait ProvidesFilesystemTraitSpec
 {
     public function it_should_implement_filesystemAwareInterface()

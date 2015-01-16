@@ -3,7 +3,6 @@
 namespace spec\Phpro\Filesystem\Initializer;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class FilesystemSpec extends ObjectBehavior
 {
@@ -18,9 +17,9 @@ class FilesystemSpec extends ObjectBehavior
     }
 
     /**
-     * @param \Phpro\Filesystem\FilesystemAwareInterface $instance
+     * @param \Phpro\Filesystem\FilesystemAwareInterface   $instance
      * @param \Zend\ServiceManager\ServiceLocatorInterface $serviceLocator
-     * @param \Symfony\Component\Filesystem\Filesystem $filesystem
+     * @param \Symfony\Component\Filesystem\Filesystem     $filesystem
      */
     public function it_should_initialize_filesystemAwareInterfaces($instance, $serviceLocator, $filesystem)
     {
@@ -29,5 +28,4 @@ class FilesystemSpec extends ObjectBehavior
 
         $instance->setFilesystem($filesystem)->shouldHaveBeenCalled();
     }
-
 }

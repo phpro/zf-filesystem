@@ -3,11 +3,9 @@
 namespace spec\Phpro\Filesystem\File;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class LocalFileSpec extends ObjectBehavior
 {
-
     protected $file = '/tmp/test-file';
 
     public function let()
@@ -66,5 +64,4 @@ class LocalFileSpec extends ObjectBehavior
         $this->move($file);
         $this->getPath()->shouldBe($file);
     }
-
 }

@@ -11,7 +11,6 @@ use Zend\Stdlib\AbstractOptions;
  */
 final class ExifToolOptions extends AbstractOptions
 {
-
     /**
      * @var string
      */
@@ -53,5 +52,4 @@ final class ExifToolOptions extends AbstractOptions
     {
         $this->executable = $executable;
     }
-
 }

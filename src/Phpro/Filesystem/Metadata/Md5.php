@@ -1,6 +1,7 @@
 <?php
 
 namespace Phpro\Filesystem\Metadata;
+
 use Phpro\Filesystem\File\FileInterface;
 
 /**
@@ -10,11 +11,10 @@ use Phpro\Filesystem\File\FileInterface;
  */
 final class Md5 extends AbstractMetadata
 {
-
     /**
      * @param $fileSystem
      */
-    public  function __construct($fileSystem)
+    public function __construct($fileSystem)
     {
         $this->filesystem = $fileSystem;
     }
@@ -27,7 +27,7 @@ final class Md5 extends AbstractMetadata
     {
         $this->guardFileExists($file);
         $md5 = md5_file($file->getPath());
+
         return $md5;
     }
-
 }

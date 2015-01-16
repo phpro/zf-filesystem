@@ -9,7 +9,6 @@ namespace Phpro\Filesystem;
  */
 interface FilesystemAwareInterface
 {
-
     /**
      * @param \Symfony\Component\Filesystem\Filesystem $filesystem
      */
@@ -19,5 +18,4 @@ interface FilesystemAwareInterface
      * @return \Symfony\Component\Filesystem\Filesystem
      */
     public function getFilesystem();
-
 }

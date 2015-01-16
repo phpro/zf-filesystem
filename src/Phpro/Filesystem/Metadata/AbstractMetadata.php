@@ -3,13 +3,11 @@
 
 namespace Phpro\Filesystem\Metadata;
 
-
 use Phpro\Filesystem\File\FileInterface;
 use Phpro\Filesystem\Initializer\Filesystem;
 
 abstract class AbstractMetadata implements MetadataInterface
 {
-
     /**
      * @var Filesystem
      */
@@ -22,8 +20,7 @@ abstract class AbstractMetadata implements MetadataInterface
     {
         $location = $file->getPath();
         if (!$this->filesystem->exists($location)) {
-            throw new \RuntimeException('File does not exist: ' . $location);
+            throw new \RuntimeException('File does not exist: '.$location);
         }
     }
-
 }

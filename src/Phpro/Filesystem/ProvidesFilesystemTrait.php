@@ -11,7 +11,6 @@ use Symfony\Component\Filesystem\Filesystem;
  */
 trait ProvidesFilesystemTrait
 {
-
     /**
      * @var Filesystem
      */
@@ -32,5 +31,4 @@ trait ProvidesFilesystemTrait
     {
         return $this->filesystem;
     }
-
 }

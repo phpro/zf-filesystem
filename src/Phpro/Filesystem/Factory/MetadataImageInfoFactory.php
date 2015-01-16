@@ -13,14 +13,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class MetadataImageInfoFactory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $filesystem = $serviceLocator->get('Filesystem');
+
         return new ImageInfo($filesystem);
     }
-
 }

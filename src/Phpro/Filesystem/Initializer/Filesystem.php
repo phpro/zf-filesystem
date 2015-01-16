@@ -14,7 +14,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class Filesystem
     implements InitializerInterface
 {
-
     /**
      * Initialize
      *
@@ -32,5 +31,4 @@ class Filesystem
         $fileSystem = $serviceLocator->get('Filesystem');
         $instance->setFilesystem($fileSystem);
     }
-
 }

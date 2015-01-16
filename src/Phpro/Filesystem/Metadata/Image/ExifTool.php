@@ -13,7 +13,6 @@ use Phpro\Filesystem\Process\ExifTool as ExifToolProcess;
  */
 final class ExifTool extends AbstractMetadata
 {
-
     /**
      * @var ExifToolProcess
      */
@@ -44,7 +43,7 @@ final class ExifTool extends AbstractMetadata
         $this->guardFileExists($file);
 
         $tag = isset($options['tag']) ? $options['tag'] : null;
+
         return $this->exifToolProcess->scanFile($file, $tag);
     }
-
 }

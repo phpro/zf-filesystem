@@ -3,11 +3,9 @@
 namespace spec\Phpro\Filesystem\File;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class UploadedFileSpec extends ObjectBehavior
 {
-
     public function let()
     {
         $this->beConstructedWith(array(
@@ -100,5 +98,4 @@ class UploadedFileSpec extends ObjectBehavior
         $this->move($file);
         $this->getPath()->shouldBe($file);
     }
-
 }

@@ -3,14 +3,13 @@
 namespace Phpro\Filesystem\Event;
 
 use Phpro\Filesystem\File\UploadedFile;
-use \Zend\EventManager\Event;
+use Zend\EventManager\Event;
 
 /**
  * Class CreateAssetEvent
  */
 class FileUploadEvent extends Event
 {
-
     /**
      * @var UploadedFile
      */
@@ -31,5 +30,4 @@ class FileUploadEvent extends Event
     {
         return $this->uploadedFile;
     }
-
 }

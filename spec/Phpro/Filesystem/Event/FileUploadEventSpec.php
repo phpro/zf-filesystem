@@ -3,7 +3,6 @@
 namespace spec\Phpro\Filesystem\Event;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class FileUploadEventSpec extends ObjectBehavior
 {

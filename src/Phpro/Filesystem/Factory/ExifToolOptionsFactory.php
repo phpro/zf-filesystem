@@ -13,7 +13,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class ExifToolOptionsFactory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
@@ -21,7 +20,7 @@ class ExifToolOptionsFactory implements FactoryInterface
     {
         $config = $serviceLocator->get('config');
         $options = $config['phpro_filesystem']['exiftool'];
+
         return new ExifToolOptions($options);
     }
-
-} 
+}

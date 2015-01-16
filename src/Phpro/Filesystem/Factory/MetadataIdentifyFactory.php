@@ -14,7 +14,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class MetadataIdentifyFactory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
@@ -25,5 +24,4 @@ class MetadataIdentifyFactory implements FactoryInterface
 
         return new Identify($filesystem, $imagick);
     }
-
-} 
+}

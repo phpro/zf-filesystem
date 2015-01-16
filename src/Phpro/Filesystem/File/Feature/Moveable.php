@@ -9,7 +9,6 @@ namespace Phpro\Filesystem\File\Feature;
  */
 interface Moveable
 {
-
     /**
      * Note: this method will not move the actual file.
      * It will only affect the parameters of the file object.
@@ -19,5 +18,4 @@ interface Moveable
      * @return mixed
      */
     public function move($targetPath);
-
-} 
+}
