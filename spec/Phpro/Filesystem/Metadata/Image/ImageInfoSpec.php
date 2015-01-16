@@ -3,8 +3,6 @@
 namespace spec\Phpro\Filesystem\Metadata\Image;
 
 use Phpro\Filesystem\File\LocalFile;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use spec\Phpro\Filesystem\Metadata\AbstractMetadata;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -30,5 +28,4 @@ class ImageInfoSpec extends AbstractMetadata
         $result[1]->shouldBe(1); // height
         $result['extended']->shouldBeArray();
     }
-
 }

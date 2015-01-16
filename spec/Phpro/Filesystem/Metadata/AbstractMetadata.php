@@ -3,12 +3,10 @@
 namespace spec\Phpro\Filesystem\Metadata;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\Filesystem\Filesystem;
 
 abstract class AbstractMetadata extends ObjectBehavior
 {
-
     protected $file = '/tmp/test-file';
 
     public function let(Filesystem $filesystem)
@@ -16,7 +14,7 @@ abstract class AbstractMetadata extends ObjectBehavior
         $filesystem->exists($this->file)->willReturn(true);
 
         // Create a file for testing purpose:
-        $img =imagecreate(1, 1);
+        $img = imagecreate(1, 1);
         imagejpeg($img, $this->file);
     }
 

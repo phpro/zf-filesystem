@@ -5,7 +5,6 @@ namespace spec\Phpro\Filesystem\Process;
 use Phpro\Filesystem\File\LocalFile;
 use Phpro\Filesystem\Options\ExifToolOptions;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ExifToolSpec extends ObjectBehavior
 {
@@ -18,7 +17,7 @@ class ExifToolSpec extends ObjectBehavior
         $options->getAllowedTags()->willReturn(['xmp', 'exif', 'iptc']);
 
         // Create a file for testing purpose:
-        $img =imagecreate(1, 1);
+        $img = imagecreate(1, 1);
         imagejpeg($img, $this->file);
     }
 
@@ -39,7 +38,7 @@ class ExifToolSpec extends ObjectBehavior
     {
         $file = new LocalFile($this->file);
 
-        $result =$this->scanFile($file);
+        $result = $this->scanFile($file);
         $result->shouldBeArray();
         $result['SourceFile']->shouldBe($this->file);
     }

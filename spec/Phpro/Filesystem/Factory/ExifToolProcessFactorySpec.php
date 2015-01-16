@@ -4,12 +4,11 @@ namespace spec\Phpro\Filesystem\Factory;
 
 use Phpro\Filesystem\Options\ExifToolOptions;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class ExifToolProcessFactorySpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Phpro\Filesystem\Factory\ExifToolProcessFactory');
     }
@@ -20,6 +19,4 @@ class ExifToolProcessFactorySpec extends ObjectBehavior
 
         $this->createService($serviceLocator)->shouldBeAnInstanceOf('Phpro\Filesystem\Process\ExifTool');
     }
-
-
 }

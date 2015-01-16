@@ -3,7 +3,6 @@
 namespace spec\Phpro\Filesystem\Factory;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class ExifToolOptionsFactorySpec extends ObjectBehavior
@@ -24,7 +23,7 @@ class ExifToolOptionsFactorySpec extends ObjectBehavior
             'phpro_filesystem' => [
                 'exiftool' => [
                     'executable' => '/usr/bin/exiftool',
-                    'allowed_tags' => ['tags']
+                    'allowed_tags' => ['tags'],
                 ],
             ],
         ]);

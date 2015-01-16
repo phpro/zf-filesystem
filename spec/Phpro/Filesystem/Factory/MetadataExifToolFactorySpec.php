@@ -4,13 +4,12 @@ namespace spec\Phpro\Filesystem\Factory;
 
 use Phpro\Filesystem\Process\ExifTool;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\Filesystem\Filesystem;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class MetadataExifToolFactorySpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Phpro\Filesystem\Factory\MetadataExifToolFactory');
     }

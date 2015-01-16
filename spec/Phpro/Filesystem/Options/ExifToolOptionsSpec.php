@@ -3,7 +3,6 @@
 namespace spec\Phpro\Filesystem\Options;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ExifToolOptionsSpec extends ObjectBehavior
 {

@@ -3,8 +3,6 @@
 namespace spec\Phpro\Filesystem\Metadata;
 
 use Phpro\Filesystem\File\LocalFile;
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\Filesystem\Filesystem;
 
 class Md5Spec extends AbstractMetadata
@@ -24,7 +22,6 @@ class Md5Spec extends AbstractMetadata
     {
         $file = new LocalFile($this->file);
 
-        $this->getMetadataForFile($file)->shouldBe('c98e0c3d617cb63bc7d0a98430bead93');;
+        $this->getMetadataForFile($file)->shouldBe('c98e0c3d617cb63bc7d0a98430bead93');
     }
-
 }
