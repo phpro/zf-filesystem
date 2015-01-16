@@ -12,6 +12,9 @@ return array(
         'factories' => [
             'Phpro\Filesystem\Service\IptcService' => 'Phpro\Filesystem\Service\IptcService',
         ],
+        'initializers' => [
+            'Phpro\Filesystem\Initializer\Filesystem' => 'Phpro\Filesystem\Initializer\Filesystem',
+        ],
     ],
 
     'phpro_filesystem' => [

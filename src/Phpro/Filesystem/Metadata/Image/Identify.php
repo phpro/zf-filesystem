@@ -30,14 +30,13 @@ final class Identify extends AbstractMetadata
     }
 
     /**
-     * @param FileInterface $file
-     *
+     * {@inheritdoc}
      * @return array
      */
-    public function getMetadataForFile(FileInterface $file)
+    public function getMetadataForFile(FileInterface $file, array $options = [])
     {
         $this->guardFileExists($file);
-        return $this->parseIdentify($file);
+        return $this->parseIdentify($file, $options);
     }
 
     /**
@@ -45,13 +44,17 @@ final class Identify extends AbstractMetadata
      *
      * @return array
      */
-    protected function parseIdentify(FileInterface $file)
+    protected function parseIdentify(FileInterface $file, array $options = [])
     {
         try {
             $image = $this->imagick;
             $image->readImage($file->getPath());
             $identifyData = $image->identifyImage();
-            $identifyData['hasSpotColors'] = $this->parseHasSpotColors();
+
+            if (isset($options['extended']) && $options['extended']) {
+                $identifyData['hasSpotColors'] = $this->hasSpotColors($image);
+            }
+
             $image->clear();
         } catch (\Exception $e) {
             return [];

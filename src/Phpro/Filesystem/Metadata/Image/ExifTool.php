@@ -35,22 +35,16 @@ final class ExifTool extends AbstractMetadata
     }
 
     /**
-     * @param mixed $tag
-     */
-    public function setTag($tag)
-    {
-        $this->tag = $tag;
-    }
-
-    /**
-     * @param FileInterface $file
+     * {@inheritdoc}
      *
      * @return mixed
      */
-    public function getMetadataForFile(FileInterface $file)
+    public function getMetadataForFile(FileInterface $file, array $options = [])
     {
         $this->guardFileExists($file);
-        return $this->exifToolProcess->scanFile($file, $this->tag);
+
+        $tag = isset($options['tag']) ? $options['tag'] : null;
+        return $this->exifToolProcess->scanFile($file, $tag);
     }
 
 }

@@ -20,11 +20,10 @@ final class Md5 extends AbstractMetadata
     }
 
     /**
-     * @param FileInterface $file
-     *
+     * {@inheritdoc}
      * @return string
      */
-    public function getMetadataForFile(FileInterface $file)
+    public function getMetadataForFile(FileInterface $file, array $options = [])
     {
         $this->guardFileExists($file);
         $md5 = md5_file($file->getPath());

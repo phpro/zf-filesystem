@@ -1,8 +1,7 @@
 <?php
 namespace Phpro\Filesystem;
-use Zend\EventManager\EventInterface;
+
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 /**
@@ -12,8 +11,7 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
  */
 class Module implements
     AutoloaderProviderInterface,
-    ConfigProviderInterface,
-    BootstrapListenerInterface
+    ConfigProviderInterface
 {
     /**
      * @return mixed
@@ -36,19 +34,4 @@ class Module implements
             ),
         );
     }
-
-    /**
-     * Listen to the bootstrap event
-     *
-     * @param EventInterface $e
-     *
-     * @return array
-     */
-    public function onBootstrap(EventInterface $e)
-    {
-        $application = $e->getApplication();
-        $serviceManager = $application->getServiceManager();
-        $serviceManager->addInitializer('Phpro\Filesystem\Initializer\Filesystem');
-    }
-
 }

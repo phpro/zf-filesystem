@@ -14,9 +14,10 @@ interface MetadataInterface
 
     /**
      * @param FileInterface $file
+     * @param array $options
      *
      * @return mixed
      */
-    public function getMetadataForFile(FileInterface $file);
+    public function getMetadataForFile(FileInterface $file, array $options = []);
 
 }

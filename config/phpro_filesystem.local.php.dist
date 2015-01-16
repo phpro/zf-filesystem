@@ -6,6 +6,12 @@ return [
         'exiftool' => [
             // Configure where the application can find the exiftool executable.
             'executable' => '/usr/bin/exiftool',
+
+            // The allowed tags for exiftool.
+            // This list is automatically generated and located in config/exiftool-tags.php
+            /*'allowed_tags' => [
+
+            ]*/
         ],
     ],
 

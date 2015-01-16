@@ -22,15 +22,18 @@ final class ImageInfo extends AbstractMetadata
     }
 
     /**
-     * @param FileInterface $file
+     * {@inheritdoc}
      *
-     * @return mixed
+     * @return array
      */
-    public function getMetadataForFile(FileInterface $file)
+    public function getMetadataForFile(FileInterface $file, array $options = [])
     {
         $this->guardFileExists($file);
         $imageInfo = getimagesize($file->getPath(), $extendedInfo);
-        $imageInfo['extended'] = $extendedInfo;
+
+        if (isset($options['extended']) && $options['extended']) {
+            $imageInfo['extended'] = $extendedInfo;
+        }
 
         return $imageInfo;
     }
