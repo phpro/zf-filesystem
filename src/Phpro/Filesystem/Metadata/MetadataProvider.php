@@ -5,11 +5,11 @@ namespace Phpro\Filesystem\Metadata;
 use Phpro\Filesystem\File\FileInterface;
 
 /**
- * Interface MetadataInterface
+ * Interface MetadataProvider
  *
  * @package Phpro\Filesystem\Metadata
  */
-interface MetadataInterface
+interface MetadataProvider
 {
     /**
      * @param FileInterface $file

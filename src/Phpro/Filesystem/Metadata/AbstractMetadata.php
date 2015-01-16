@@ -4,9 +4,9 @@
 namespace Phpro\Filesystem\Metadata;
 
 use Phpro\Filesystem\File\FileInterface;
-use Phpro\Filesystem\Initializer\Filesystem;
+use Symfony\Component\Filesystem\Filesystem;
 
-abstract class AbstractMetadata implements MetadataInterface
+abstract class AbstractMetadata implements MetadataProvider
 {
     /**
      * @var Filesystem
