@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpro\Filesystem\Facotry;
+namespace Phpro\Filesystem\Factory;
 
 use Phpro\Filesystem\Metadata\Image\ImageInfo;
 use Zend\ServiceManager\FactoryInterface;

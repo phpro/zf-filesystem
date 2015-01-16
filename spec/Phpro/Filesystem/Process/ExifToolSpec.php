@@ -18,4 +18,6 @@ class ExifToolSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Phpro\Filesystem\Process\ExifTool');
     }
+
+    // Todo: find a way to spec process
 }

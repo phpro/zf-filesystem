@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpro\Filesystem\Facotry;
+namespace Phpro\Filesystem\Factory;
 
 use Phpro\Filesystem\Options\ExifToolOptions;
 use Zend\ServiceManager\FactoryInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpro\Filesystem\Facotry;
+namespace Phpro\Filesystem\Factory;
 
 use Imagick;
 use Phpro\Filesystem\Metadata\Image\Identify;
