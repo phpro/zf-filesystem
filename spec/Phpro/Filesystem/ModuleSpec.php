@@ -22,11 +22,6 @@ class ModuleSpec extends ObjectBehavior
         $this->shouldImplement('Zend\ModuleManager\Feature\ConfigProviderInterface');
     }
 
-    public function it_should_implement_bootstrap_listener_interface()
-    {
-        $this->shouldImplement('Zend\ModuleManager\Feature\BootstrapListenerInterface');
-    }
-
     public function it_should_load_config()
     {
         $this->getConfig()->shouldBeArray();
@@ -35,20 +30,6 @@ class ModuleSpec extends ObjectBehavior
     public function it_should_load_autoloader_config()
     {
         $this->getAutoloaderConfig()->shouldBeArray();
-    }
-
-    /**
-     * @param \Zend\Mvc\MvcEvent $event
-     * @param \Zend\Mvc\Application $application
-     * @param \Zend\ServiceManager\ServiceManager $serviceManager
-     */
-    public function it_should_attach_filesystem_initializer($event, $application, $serviceManager)
-    {
-        $event->getApplication()->willReturn($application);
-        $application->getServiceManager()->willReturn($serviceManager);
-        $serviceManager->addInitializer('Phpro\Filesystem\Initializer\Filesystem')->shouldBeCalled();
-
-        $this->onBootstrap($event);
     }
 
 }
