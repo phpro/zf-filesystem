@@ -107,6 +107,7 @@ class ExifTool
         // Run process:
         $process = $processBuilder->getProcess();
 
-        return $this->runProcess($process);
+        $result = $this->runProcess($process);
+        return $result[0];
     }
 }
