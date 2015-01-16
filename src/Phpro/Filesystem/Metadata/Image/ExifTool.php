@@ -11,7 +11,7 @@ use Phpro\Filesystem\Process\ExifTool as ExifToolProcess;
  *
  * @package Phpro\Filesystem\Metadata\Image
  */
-final class ExifTool extends AbstractMetadata
+class ExifTool extends AbstractMetadata
 {
     /**
      * @var ExifToolProcess

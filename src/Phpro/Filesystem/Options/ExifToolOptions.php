@@ -9,7 +9,7 @@ use Zend\Stdlib\AbstractOptions;
  *
  * @package Phpro\Filesystem\Options
  */
-final class ExifToolOptions extends AbstractOptions
+class ExifToolOptions extends AbstractOptions
 {
     /**
      * @var string

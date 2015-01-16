@@ -9,7 +9,7 @@ use Phpro\Filesystem\File\FileInterface;
  *
  * @package Phpro\Filesystem\Metadata
  */
-final class Md5 extends AbstractMetadata
+class Md5 extends AbstractMetadata
 {
     /**
      * @param $fileSystem

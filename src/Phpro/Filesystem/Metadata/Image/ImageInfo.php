@@ -10,7 +10,7 @@ use Phpro\Filesystem\Metadata\AbstractMetadata;
  *
  * @package Phpro\Filesystem\Metadata\Image
  */
-final class ImageInfo extends AbstractMetadata
+class ImageInfo extends AbstractMetadata
 {
     /**
      * @param $fileSystem

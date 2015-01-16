@@ -23,7 +23,7 @@ class FilesystemSpec extends ObjectBehavior
      */
     public function it_should_initialize_filesystemAwareInterfaces($instance, $serviceLocator, $filesystem)
     {
-        $serviceLocator->get('Symfony\Component\Filesystem\Filesystem')->willReturn($filesystem);
+        $serviceLocator->get('Filesystem')->willReturn($filesystem);
         $this->initialize($instance, $serviceLocator);
 
         $instance->setFilesystem($filesystem)->shouldHaveBeenCalled();

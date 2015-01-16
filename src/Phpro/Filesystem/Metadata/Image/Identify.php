@@ -11,7 +11,7 @@ use Phpro\Filesystem\Metadata\AbstractMetadata;
  *
  * @package Phpro\Filesystem\Metadata\Image
  */
-final class Identify extends AbstractMetadata
+class Identify extends AbstractMetadata
 {
     /**
      * @var Imagick

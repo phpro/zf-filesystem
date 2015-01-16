@@ -25,9 +25,6 @@
   "autoload": {
     "psr-0": {
       "Phpro\\Filesystem": "src/"
-    },
-    "psr-4": {
-      "spec\\Phpro\\Filesystem\\": "spec/Phpro/Filesystem/"
     }
   }
 }
