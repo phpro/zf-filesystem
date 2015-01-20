@@ -11,7 +11,7 @@ return array(
             'Phpro\Filesystem\Metadata\Image\ImageInfo' => 'Phpro\Filesystem\Factory\MetadataImageInfoFactory',
             'Phpro\Filesystem\Metadata\Md5' => 'Phpro\Filesystem\Factory\MetadataMd5Factory',
             'Phpro\Filesystem\Options\ExifToolOptions' => 'Phpro\Filesystem\Factory\ExifToolOptionsFactory',
-            'Phpro\Filesystem\Process\ExifTool' => 'Phpro\Filesystem\Factory\ExifToolProccessFactory',
+            'Phpro\Filesystem\Process\ExifTool' => 'Phpro\Filesystem\Factory\ExifToolProcessFactory',
         ],
         'initializers' => [
             'Phpro\Filesystem\Initializer\Filesystem' => 'Phpro\Filesystem\Initializer\Filesystem',
