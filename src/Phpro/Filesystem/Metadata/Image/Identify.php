@@ -48,7 +48,11 @@ class Identify extends AbstractMetadata
     {
         try {
             $image = $this->imagick;
-            $image->readImage($file->getPath());
+
+            $format = strtolower(pathinfo($file->getPath(), PATHINFO_EXTENSION));
+            $source = $this->alterSource($file->getPath(), $format);
+
+            $image->readImage($source);
             $identifyData = $image->identifyImage();
 
             if (isset($options['extended']) && $options['extended']) {
@@ -75,5 +79,23 @@ class Identify extends AbstractMetadata
         $spotColors = $image->getImageProperties('*SpotColor*');
 
         return count($spotColors) ? true : false;
+    }
+
+    /**
+     * Makes it possible to change the source of a file based on the format.
+     * Only read/identify the first page of a PDF file.
+     *
+     * @param $source
+     * @param $format
+     *
+     * @return string
+     */
+    protected function alterSource($source, $format)
+    {
+        if (strtolower($format) == 'pdf') {
+            return $source . '[0]';
+        }
+
+        return $source;
     }
 }
