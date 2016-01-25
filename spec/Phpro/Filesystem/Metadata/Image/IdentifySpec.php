@@ -22,9 +22,10 @@ class IdentifySpec extends AbstractMetadata
     public function it_should_be_able_to_load_metadata(Filesystem $filesystem, \Imagick $imagick)
     {
         $file = new LocalFile($this->file);
-        $imagick->readimage($this->file)->shouldBeCalled();
-        $imagick->identifyimage()->willReturn(['key' => 'value']);
-        $imagick->getimageproperties('*SpotColor*')->willReturn([1]);
+        $imagick->readImage($this->file)->shouldBeCalled();
+        $imagick->getNumberImages()->willReturn(0);
+        $imagick->identifyImage()->willReturn(['key' => 'value']);
+        $imagick->getImageProperties('*SpotColor*')->willReturn([1]);
         $imagick->clear()->shouldBeCalled();
 
         $this->getMetadataForFile($file, ['extended' => true])->shouldReturn([

@@ -53,6 +53,8 @@ class Identify extends AbstractMetadata
             $source = $this->alterSource($file->getPath(), $format);
 
             $image->readImage($source);
+            $this->handleMultiPages($image);
+
             $identifyData = $image->identifyImage();
 
             if (isset($options['extended']) && $options['extended']) {
@@ -97,5 +99,17 @@ class Identify extends AbstractMetadata
         }
 
         return $source;
+    }
+
+    /**
+     * Make sure to select the first image when parsing multi-paged images.
+     *
+     * @param Imagick $image
+     */
+    protected function handleMultiPages($image)
+    {
+        if ($image->getNumberImages() > 1) {
+            $image->setIteratorIndex(0);
+        }
     }
 }
