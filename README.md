@@ -1,3 +1,9 @@
+> ## Repository abandoned 2020-11-27
+>
+> This repository has been archived since we are not using it anymore internally.
+> Feel free to use it AS-IS, we won't be providing any support anymore.
+
+
 # zf-filesystem
 
 This module contains of:
